@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('adminlte.master');
 });
+
+Route::get('/create/question', 'questionController@create');

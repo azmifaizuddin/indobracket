@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class questionController extends Controller
 {
     public function create(){
-
+        return view('question.form');
     }
 }
