@@ -9,8 +9,6 @@ class questionModel {
         return $questions;
     }
 
-
-
     public static function save($data){
         unset($data["_token"]);
         $new_question = DB::table('questions')->insert($data);
