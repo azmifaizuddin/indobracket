@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\questionModel;
 use Illuminate\Http\Request;
 
 class questionController extends Controller
@@ -11,7 +12,12 @@ class questionController extends Controller
     }
     public function store(Request $request){
         $new_question = questionModel::save($request->all());
-        return redirect('/questions')
+        return redirect('/questions');
+    }
+
+    public function index(){
+        $questions = questionModel::get_all();
+        return view('question.index', compact('questions'));
     }
 }
 
